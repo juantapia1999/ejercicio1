@@ -1,0 +1,40 @@
+Bienvenido!!!
+<div class="col-12">
+    <div class="table-responsive ">
+        <form method="post" action="./procesar">
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Select...</th>
+                        <th scope="col">#</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Password</th>
+                        <th scope="col">Rol</th>
+                        <th>Acciones</th>
+                        <th>Numeros</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each users}}
+                    <tr>
+                        <td><input type="checkbox" name="usuario" value='{{id}}'></td>
+                        <td>{{id}}</td>
+                        <td>{{nombre}}</td>
+                        <td>{{email}}</td>
+                        <td>{{password}}</td>
+                        <td>{{rol}}</td>
+                        <td><a class="btn btn-danger" href="/user/delete/{{id}}">eliminar</a></td>
+                        <td><input type="number" name="prueba" value="0"></td>
+                    </tr>
+                    {{else}}
+                    <tr>
+                        <td colspan="4">No hay mas filas</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            <button type="submit" class="btn btn-outline-success btn-block">Aceptar</button>
+        </form>
+    </div>
+</div>
